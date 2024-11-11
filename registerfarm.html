@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register to Buy | Farm Direct</title>
+    <link rel="stylesheet" href="registerfarm.css">
+    <script src="registerfarm.js" defer></script>
+</head>
+<body>
+    <div class="register-container">
+        <header class="header">
+            <h1>Register to Sell Farm Products</h1>
+            <p>Fill out the form below to sell fresh farm products directly to daily buyers and Agro-firms as well</p>
+        </header>
+
+        <form id="registerForm" class="register-form" onsubmit="return handleSubmit(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Your Address" required>
+
+            <label for="products">Products you want to sell:</label>
+            <input type="text" id="products" name="products" placeholder="e.g., fruits, vegetables, dairy" required>
+
+            <label for="location">Select Location:</label>
+            <select id="location" name="location" required>
+                <option value="">Select a location</option>
+                <option value="Patna, Bihar">Patna, Bihar</option>
+                <option value="Patna, Bihar">Siwan, Bihar</option>
+                <option value="Gaya, Bihar">Gaya, Bihar</option>
+                <option value="Bhagalpur, Bihar">Bhagalpur, Bihar</option>
+                <option value="Muzaffarpur, Bihar">Muzaffarpur, Bihar</option>
+                <option value="Purnia, Bihar">Purnia, Bihar</option>
+                <option value="Lucknow, UP">Lucknow, UP</option>
+                <option value="Varanasi, UP">Varanasi, UP</option>
+                <option value="Allahabad, UP">Allahabad, UP</option>
+                <option value="Gorakhpur, UP">Gorakhpur, UP</option>
+                <option value="Kanpur, UP">Kanpur, UP</option>
+            </select>
+
+            <label for="message">Additional Message:</label>
+            <textarea id="message" name="message" rows="4" placeholder="Any additional instructions or requests"></textarea>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="goToHomepage()">Go to Homepage</button>
+        </form>
+    </div>
+</body>
+</html>
