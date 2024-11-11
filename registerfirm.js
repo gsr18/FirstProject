@@ -1,6 +1,6 @@
 // Redirects user to the homepage
 function goToHomepage() {
-    window.location.href = "home.html"; // Replace "homepage.html" with your actual homepage URL
+    window.location.href = "index.html"; // Replace "homepage.html" with your actual homepage URL
 }
 
 // Handles form submission and redirects to the "Thank You" page
