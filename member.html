@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cceaf1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styling */
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Homepage Button Styling */
+        .homepage-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #007BFF;
+            text-decoration: none;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .homepage-btn:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .payment-section {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Member Registration</h1>
+        
+        <form id="registrationForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Choose a password" required>
+
+            <div class="payment-section">
+                <label>
+                    <input type="checkbox" id="membership" name="membership" required>
+                    I agree to pay a membership fee of $10 to join as a member.
+                </label>
+            </div>
+
+            <button type="submit" class="btn">Register</button>
+        </form>
+
+        <div id="successMessage" class="success-message">
+            Registration successful! Welcome!
+        </div>
+
+        <!-- Homepage Button -->
+        <a href="index.html" class="homepage-btn">Go to Homepage</a>
+    </div>
+
+    <script>
+        // Handling form submission
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Check if the membership checkbox is checked
+            const membershipChecked = document.getElementById("membership").checked;
+            if (!membershipChecked) {
+                alert("You must agree to pay the membership fee.");
+                return;
+            }
+
+            // Display success message
+            document.getElementById("successMessage").style.display = "block";
+
+            // Simulate form submission (logging to console)
+            console.log("Name:", document.getElementById("name").value);
+            console.log("Email:", document.getElementById("email").value);
+            console.log("Password:", document.getElementById("password").value);
+            console.log("Membership Fee Paid: Yes");
+
+            // You can add your form submission logic here (e.g., sending data to server)
+        });
+    </script>
+
+</body>
+</html>
